@@ -1,9 +1,5 @@
-GameSource
+React Theme for WordPress
 
-App React para testes da API RAWG 
-
-Projeto de teste do Git
-
-URL https://github.com/RafaShouman/gamesource
+URL https://github.com/RafaShouman/react-theme-first
 
 
