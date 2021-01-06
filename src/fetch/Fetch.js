@@ -1,4 +1,4 @@
-async function myFetch(url, metod, data) {
+async function myFetch(url, metod = 'GET', data) {
 
     let result
     let dataObj = {
@@ -11,7 +11,7 @@ async function myFetch(url, metod, data) {
     fetch(`https://api.rawg.io/api/${url}?key=d32c5152044246ab83ca70dafe04e65e`, dataObj).then(resp => {
         return resp.json()
     }).then(response => {
-        result = await response.next
+        result =  response
         console.log('fetch response',result)
     }).catch(err => {
         console.error(err)
