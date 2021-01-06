@@ -9,22 +9,16 @@ function GetGame(props) {
     const [response, setResponse] = useState([])
     const [loaderOn, setLoaderOn] = useState(true)
     const url = props.url
-    const key = 'd32c5152044246ab83ca70dafe04e65e'
+    //const key = 'd32c5152044246ab83ca70dafe04e65e'
 
-    function fetchData(url) {
-        fetch(`https://api.rawg.io/api/${url}?key=${key}`)
-            .then(res => {
-                return res.json();
-            })
-            .then(res => {
-                console.log(res.results)
-                setResponse(res.results);
-                setLoaderOn(false)
-            });
+    async function fetchData(url) {
+
+        let tempRes = await FetchModule(url)
+        setLoaderOn(false)
+        return  setResponse(tempRes)
     }
 
     useEffect(() => {
-        FetchModule(url)
         fetchData(url)
     }, [url])
 
@@ -32,7 +26,7 @@ function GetGame(props) {
         <>
             { loaderOn && <Loader />}
             <section className="games">
-                {response.map((cur) => {
+                {response && response.map((cur) => {
                     return (
                         <animated.div key={cur.id} style={propsAnim}>
                             <div className="game-box">
