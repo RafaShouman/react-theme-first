@@ -4,19 +4,20 @@ async function myFetch(url, metod = 'GET', data) {
     let dataObj = {
         "method": metod
     }
-    if(data) {
+    if (data) {
         dataObj.body = data
     }
-    
-    await fetch(`https://api.rawg.io/api/${url}?key=d32c5152044246ab83ca70dafe04e65e`, dataObj).then(resp => {
+
+    await fetch(`http://localhost/wordpress/wp-json/wp/v2/${url}`, dataObj).then(resp => {
         return resp.json()
     }).then(response => {
-        result =   response.results
-        console.log('fetch response',result)
+        result = response
+        console.log('fetch response', result)
     }).catch(err => {
         console.error(err)
         result = err
     });
+
 
     return result
 }

@@ -1,5 +1,5 @@
 import logo from './assets/imgs/logo.svg';
-import GetGame from './components/GetGame'
+import GetData from './components/GetData'
 import './App.css';
 import './assets/scss/App.scss'
 import './assets/scss/Footer.scss'
@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <GetGame url="games"/>      
+      <GetData url="posts"/>      
     </div>
   );
 }

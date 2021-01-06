@@ -16,16 +16,16 @@ $mainColor: rgb(30, 30, 30);
 	align-items: center;
 	background-color: rgba($mainColor, 0.8);
 }
-.games {
+.box-content {
 	margin-top: 45px;
-	background-color: rgba($mainColor, 1);
+	//background-color: rgba($mainColor, 1);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	
 	flex-wrap: wrap;
 	width: 100%;
-	.game-box {
-		width: 24.7vw;
+	.box-data {
 		max-height: 450px;
 		position: relative;
 		display: flex;
@@ -47,13 +47,12 @@ $mainColor: rgb(30, 30, 30);
 		}
 		h3 {
 			width: 100%;
-			color: rgba(whitesmoke, 1);
-			background-color: rgba(black, 0.8);
+			color: rgba(black, 1);
 			position: absolute;
 			left: 0;
 			top: 0;
 			margin: 0;
-			text-shadow: 0 0 5px rgba($mainColor, 0.9);
+			//text-shadow: 0 0 5px rgba($mainColor, 0.9);
 		}
 	}
 }
